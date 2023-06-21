@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Action Recognition</title>
+</head>
+<body>
+    <h1>Action Recognition</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="video" accept="video/*">
+        <br><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
