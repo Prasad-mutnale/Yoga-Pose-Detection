@@ -1,7 +1,23 @@
-body{
-    background-color: aqua;
-}
-
+/* 
 .heading{
     color: green;
+} */
+
+/* .upload{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+} */
+.heading{
+    color: yellow;
+} 
+.upload{
+    color: brown;
+    font-size: 5rem;
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
 }

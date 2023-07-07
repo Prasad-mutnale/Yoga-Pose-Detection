@@ -52,8 +52,7 @@ def predict_action(request):
         
 
         return render(request,'output.html',{'predicted_output':predicted_output})
-        
-
+    
         # return JsonResponse({'predictions': output_list})
     return render(request,'templates/predict_action.html')
 
