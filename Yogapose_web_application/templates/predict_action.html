@@ -2,32 +2,76 @@
 {% block title %}Action Recognition{% endblock %}
 {% block css %} 
 .heading{
-    color: green;
+  font-weight:bold
+    color: lightblue;
 } 
+
+span{
+  font-size:1rem;
+}
 
 .upload{
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    {% comment %} border: 2px solid black; {% endcomment %}
+    flex-direction:column;
+    
 } 
+
+.button{
+  display:grid;
+  place-items:center
+}
+
+.cont{
+  width:50%;
+  {% comment %} margin-top:10px; {% endcomment %}
+  {% comment %} border:2px solid gray; {% endcomment %}
+  border-radius:15px;
+  margin:0 auto;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  {% comment %} box-shadow: 5px 5px 10px; {% endcomment %}
+  padding:4rem ;
+}
+
+.title{
+  {% comment %} margin:0 auto; {% endcomment %}
+  text-align:center;
+  margin:10px;
+}
+
+.subhead{
+  font-size:1.2rem
+}
+
+
 {% endblock %}
 {% block body %}
+
   <div class="upload">
-      <h1 class="heading">Action Recognition</h1>
+    <div class="title">
+      <h1 class="heading text-secondary"><strong>Personalized Asana Prediction</strong></h1>
+      <span class="subhead text-primary"> <strong>Empowering Your Yoga Practice</strong></span>
+      </div>
+    <div class="cont">
       <form method="post" enctype="multipart/form-data">
-          {% csrf_token %}
-  
-  
-          <div>
-            <label for="formFileLg" class="form-label">Upload Video File  </label>
-            <input class="form-control form-control-lg" id="formFileLg" type="file" name="video" accept="video/*">
+          {% csrf_token %}  
+
+          <label for="formFileLg" class="form-label"><strong>Upload Your Yoga Video</strong>  </label>
+          <div class="input-group mb-3">
+            <input  type="file" class="form-control" id="inputGroupFile02" name="video" accept="video/*">
+            
+          </div>
+          <br/>
+          <div class="button">
+            <input type="submit" class="btn btn-primary" value="Start Prediction">
           </div>
           <!-- <input type="file" name="video" accept="video/*"> -->
-          <br><br>
-          <input type="submit" class="btn btn-primary" value="Predict">
-      </form>
+          
+        </form>
+      </div>
     </div>
 {% endblock %}
