@@ -19,7 +19,7 @@ from tensorflow.keras.models import load_model
 from django.conf import settings
 
 def index(request):
-    return render(request,'templates/index.html')
+    return render(request,'index.html')
 
 from collections import Counter
 
@@ -54,7 +54,7 @@ def predict_action(request):
         return render(request,'output.html',{'predicted_output':predicted_output})
     
         # return JsonResponse({'predictions': output_list})
-    return render(request,'templates/predict_action.html')
+    return render(request,'predict_action.html')
 
 def predict_on_video(video_path,output_video_path,SEQUENCE_LENGTH,LRCN_model,CLASSES_LIST,output_list,IMAGE_HEIGHT,IMAGE_WIDTH):
     video_reader=cv2.VideoCapture(video_path)
